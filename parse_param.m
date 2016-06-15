@@ -8,6 +8,10 @@ load('conv1_w.mat');
 load('conv1_b.mat');
 load('conv2_w.mat');
 load('conv2_b.mat');
+load('ip1_w.mat');
+load('ip1_b.mat');
+load('ip2_w.mat');
+load('ip2_b.mat');
 
 %% Parse parameters into better fit version
 % conv1 has 20 filters with 5 * 5 size 
@@ -24,5 +28,10 @@ for k = 1:20
     end
 end
 b2 = double(conv2_b');
+% fc layers
+ip1W = double(ip1_w);
+ip1b = double(ip1_b');
+ip2W = double(ip2_w);
+ip2b = double(ip2_b');
 
-save('parsed_param.mat','W1','W2','b1','b2');
+save('parsed_param.mat','W1','W2','b1','b2','ip1W','ip1b','ip2W','ip2b');
